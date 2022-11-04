@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Books</h1>
+
+<div id="books">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% i_105 = 1 %>
+  <% @books.each do |book_105| %>
+    <%= render :partial => 'books/book', :locals => {:index => i_105, :book => book_105}%>
+    <% i_105 += 1 %>
+  <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New book", new_book_path %>

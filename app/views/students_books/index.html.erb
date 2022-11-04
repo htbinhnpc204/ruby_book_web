@@ -1,0 +1,43 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="w-50 mr-auto text-center font-weight-bold">
+  <p>THƯ VIỆN</p>
+  <p>TRƯỜNG TIỂU HỌC PHONG THANH TÂY A</p>
+</div>
+<div class="d-flex">
+  <p class="w-75 text-center font-weight-bold">QUẢN LÝ CHO HỌC SINH MƯỢN SÁCH</p>
+  <div class="d-flex font-weight-bold">
+    <span class="w-75 mr-2">Quy định ngày quá hạn</span>
+    <span class="border border-danger text-danger p-3">3</span>
+  </div>
+</div>
+
+<div id="students_books" class="mt-4">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ma HS</th>
+      <th scope="col">Ten HS</th>
+      <th scope="col">Lop</th>
+      <th scope="col">Ma Sach</th>
+      <th scope="col">Ten Sach</th>
+      <th scope="col">Tac Gia</th>
+      <th scope="col">Tu Sach</th>
+      <th scope="col">So BM</th>
+      <th scope="col">Ngay Muon</th>
+      <th scope="col">Ngay Tra</th>
+      <th scope="col">So Ngay</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% i_105 = 1 %>
+    <% @students_books.each do |students_book_105| %>
+      <%= render :partial => 'students_books/students_book', :locals => {:index => i_105, :students_book_105 => students_book_105}%>
+      <% i_105 += 1 %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New students book", new_students_book_path %>
